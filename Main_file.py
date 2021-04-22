@@ -64,17 +64,17 @@ def main_function():
         MAIN_HERO = Hero.Hero(name)
         print("You find yourself in a cave.\n"
               "You see dead and hardly injured people around.\n"
-              "You don't know how did you get there,and who are this people around.\n"
+              "You don't know how did you get there,and who are these people around.\n"
               "Then you see the weapon behind the huge closed trunk.\n\n")
         weapon1 = create_the_weapon()
         print("That is a", weapon1.name, ",and of course you take it.")
         MAIN_HERO.add_to_inventory(weapon1)
         MAIN_HERO.add_to_inventory(create_the_artefact())
-        print("You hear the steps and grouning.You realize that you need to get out of this place.")
+        print("You hear the steps and grouling.You realize that you need to get out of this place.")
         print("There are two goblins on your way.\nYou need to kill them.\n")
         fight(MAIN_HERO, [Enemy001.Enemy("Goblin", random.randint(15, 40), random.randint(25, 60)) for num in range(2)])
         while True:
-            if MAIN_HERO.health < 1:
+            if MAIN_HERO.health <= 0:
                 break
             print("\n\nIn which of this cities you want to go.\n")
             for city in range(len(CITIES)):
